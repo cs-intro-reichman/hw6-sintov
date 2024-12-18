@@ -10,7 +10,7 @@ public class Runigram {
 		
 		// Tests the reading and printing of an image:	
 		Color[][] tinypic = read("tinypic.ppm");
-		print(tinypic);
+		print(grayScaled(tinypic));
 		print(scaled(tinypic,3,5));
 	
 
@@ -154,8 +154,6 @@ public class Runigram {
 		int newRed = (int)(alpha * c1.getRed() + (1-alpha) * c2.getRed());
 		int newGreen = (int)(alpha * c1.getGreen() + (1-alpha) * c2.getGreen());
 		int newBlue = (int)(alpha * c1.getBlue() + (1-alpha) * c2.getBlue());
-		System.out.println("old is" + c1.getRed());
-		System.out.println("new is" + newRed);
 		Color newBlended = new Color(newRed,newGreen,newBlue);
 		return newBlended;
 	}
